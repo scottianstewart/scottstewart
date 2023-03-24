@@ -9,11 +9,13 @@ import Module from "./components/Module";
 import ResumeModule from "./components/ResumeModule";
 import StatsModule from "./components/StatsModule";
 import WeatherModule from "./components/WeatherModule";
+import ThemeButton from "./components/ThemeButton";
 
 const spotifyApi = new SpotifyWebApi();
 
 function App() {
   const [accessToken, setAccessToken] = useState();
+  const [theme, setTheme] = useState("light");
   const [songsILike, setSongsILike] = useState();
 
   const getAuth = async () => {
@@ -74,27 +76,42 @@ function App() {
   console.log("songsILike", songsILike);
 
   return (
-    <main className="main">
+    <main className="main" data-theme={theme}>
       <div className="nav">
-        {/* <h1>Dashboard</h1> */}
-        <div>day / night</div>
         <AccountInfo />
+        <div>
+          <ThemeButton
+            onClick={() => setTheme("light")}
+            active={theme === "light"}
+          >
+            day
+          </ThemeButton>{" "}
+          /
+          <ThemeButton
+            onClick={() => setTheme("dark")}
+            active={theme === "dark"}
+          >
+            night
+          </ThemeButton>
+        </div>
       </div>
-      <div className="content-wrapper">
-        {/* <div className="sidebar" /> */}
-        <div className="content">
-          <ResumeModule />
-          <StatsModule />
-          <WeatherModule />
-          <Module columnSpan={3} title="Songs I Like (Thanks Spotify)">
-            <table>
-              <thead>
+      <div className="content">
+        <ResumeModule />
+        <StatsModule />
+        {/* <WeatherModule /> */}
+        <Module
+          className="module--full-width"
+          title="Songs I Like (Thanks Spotify)"
+        >
+          <table>
+            <tbody>
+              <tr>
                 <th />
                 <th>title</th>
                 <th>artist</th>
                 <th>album</th>
                 <th />
-              </thead>
+              </tr>
               {songsILike?.map((song) => {
                 return (
                   <tr>
@@ -115,9 +132,9 @@ function App() {
                   </tr>
                 );
               })}
-            </table>
-          </Module>
-        </div>
+            </tbody>
+          </table>
+        </Module>
       </div>
     </main>
   );

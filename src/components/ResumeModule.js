@@ -2,6 +2,7 @@ import Module from "./Module";
 import formidableLogo from "../assets/formidable.png";
 import synapseLogo from "../assets/synapse.jpg";
 import recruitingLogo from "../assets/recruiting.png";
+import redBullLogo from "../assets/redbull.png";
 
 const ResumeModule = () => {
   return (
@@ -28,6 +29,14 @@ const ResumeModule = () => {
           <p>Recruiting.com</p>
           <p className="small">Web Designer / Developer</p>
           <p className="small">2015 - 2016</p>
+        </div>
+      </div>
+      <div className="resume-module__list-item">
+        <img src={redBullLogo} alt="recruiting logo" />
+        <div className="resume-module__list-item__content">
+          <p>Red Bull Records</p>
+          <p className="small">Musician</p>
+          <p className="small">2012 - 2015</p>
         </div>
       </div>
     </Module>

@@ -10,9 +10,10 @@
 }
 
 [data-theme="light"] {
-  --bg-color: #081B02;
-  --font-color: #CED1CC;
+  --bg-color: #CED1CC;
+  --font-color: #081B02;
   --font-color-light: #838D80;
+  --border-color: #21321B;
 }
 
 
@@ -21,7 +22,6 @@
 }
 
 html {
-  background-color: var(--bg-color);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 14px;
 }
@@ -34,15 +34,9 @@ html {
 /* Main Layout */
 
 .main {
+  background-color: var(--bg-color);
   color: var(--font-color);
-  height: 100vh;
   box-sizing: border-box;
-}
-
-@media screen and (min-width: 700px) {
-  .main {
-    overflow-y: hidden;
-  }
 }
 
 .nav {
@@ -54,20 +48,8 @@ html {
   padding-left: 24px;
 }
 
-@media screen and (min-width: 700px) {
-  /* .nav {
-    padding-left: 96px;
-  } */
-}
-
 .nav h1 {
   font-size: 20px;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .content {
@@ -75,19 +57,12 @@ html {
   flex-direction: column;
 }
 
-.sidebar {
-  width: 96px;
-}
-
 @media screen and (min-width: 700px) {
-  .content-wrapper {
-    flex-direction: row;
-  }
   .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    height: 100%;
+    padding: 0 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
   }
 }
 
@@ -120,9 +95,10 @@ html {
 
 /* <Module /> */
 
-.module {
+.module,
+.module--full-width {
   border-top: 1px solid var(--border-color);
-  height: 100%;
+  width: 100%;
 }
 
 .module__title {
@@ -137,11 +113,21 @@ html {
 }
 
 @media screen and (min-width: 700px) {
- .module {
-    border-left: 1px solid var(--border-color);
-    overflow-y: scroll;
- }
+  .module,
+  .module--full-width {
+    width: 100%;
+  }
+
+  .module {
+    border: 1px solid var(--border-color);
+    width: calc(50% - 12px);
+  }
+
+  .module--full-width {
+    width: 100%;
+  }
 }
+
 
 /* <ResumeModule /> */
 
@@ -203,12 +189,6 @@ html {
   font-size: 12px;
 }
 
-@media screen and (min-width: 700px) {
-  .weatherdata {
-
-  }
- }
-
 /* html table */
 
 table {
@@ -220,7 +200,6 @@ th,
 td {
   vertical-align: middle;
   padding: 16px;
-  border-bottom: 1px solid var(--border-color);
 }
 
 
@@ -244,6 +223,23 @@ td > img {
 
 th {
   text-align: left;
+}
+
+/* ThemeButton */
+
+.theme-button {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  margin: 0;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.theme-button--active {
+  font-weight: bold;
 }
 
 /* Keyframe animations */
