@@ -8,7 +8,6 @@ import AccountInfo from "./components/AccountInfo";
 import Module from "./components/Module";
 import ResumeModule from "./components/ResumeModule";
 import StatsModule from "./components/StatsModule";
-import WeatherModule from "./components/WeatherModule";
 import ThemeButton from "./components/ThemeButton";
 
 const spotifyApi = new SpotifyWebApi();
