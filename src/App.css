@@ -28,7 +28,7 @@ html {
 
 .small {
   font-size: 12px;
-  color: var(--font-color-light)
+  color: var(--font-color-light);
 }
 
 /* Main Layout */
@@ -92,6 +92,12 @@ html {
   width: 48px;
   height: 48px;
   border-radius: 50%;
+}
+
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 /* <Module /> */
