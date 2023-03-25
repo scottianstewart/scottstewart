@@ -37,6 +37,7 @@ html {
   background-color: var(--bg-color);
   color: var(--font-color);
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .nav {
@@ -189,40 +190,37 @@ html {
   font-size: 12px;
 }
 
-/* html table */
+/* tracks */
 
-table {
-  width: 100%;
+.tracklist {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 12px;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
 }
 
 
-th,
-td {
-  vertical-align: middle;
-  padding: 16px;
+.track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* border: 1px solid var(--border-color); */
 }
 
+.track img {
+  height: 64px;
+}
 
-th {
-  font-size: 10px;
+.trackname {
   font-weight: bold;
-  padding-bottom: 12px;
-  opacity: 0.5;
-  text-transform: uppercase;
 }
 
-th:first-child,
-td:first-child {
-  border-bottom: none;
-  padding-left: 0;
-}
-
-td > img {
-  height: 48px;
-}
-
-th {
-  text-align: left;
+.trackinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
 }
 
 /* ThemeButton */

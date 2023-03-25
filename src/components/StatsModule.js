@@ -14,8 +14,6 @@ const StatsModule = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(seconds);
-
   function secondsToDhms(seconds) {
     seconds = Number(seconds) - birthDate.getTime() / 1000;
     var d = Math.floor(seconds / (3600 * 24));

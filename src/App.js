@@ -72,8 +72,6 @@ function App() {
     );
   }, [accessToken]);
 
-  console.log("songsILike", songsILike);
-
   return (
     <main className="main" data-theme={theme}>
       <div className="nav">
@@ -102,37 +100,24 @@ function App() {
           className="module--full-width"
           title="Songs I Like (Thanks Spotify)"
         >
-          <table>
-            <tbody>
-              <tr>
-                <th />
-                <th>title</th>
-                <th>artist</th>
-                <th>album</th>
-                <th />
-              </tr>
+          {songsILike ? (
+            <div className="tracklist">
               {songsILike?.map((song) => {
                 return (
-                  <tr>
-                    <td>
-                      <img
-                        src={song.track.album.images[2].url}
-                        alt="album art"
-                      />
-                    </td>
-                    <td>{song.track.name}</td>
-                    <td>{song.track.artists[0].name}</td>
-                    <td>{song.track.album.name}</td>
-                    <td>
-                      {/* {song.track.preview_url && (
-                        <audio controls src={song.track.preview_url}></audio>
-                      )} */}
-                    </td>
-                  </tr>
+                  <div className="track">
+                    <img src={song.track.album.images[2].url} alt="album art" />
+                    <div className="trackinfo">
+                      <div className="trackname">{song.track.name}</div>
+                      <p className="label">{song.track.artists[0].name}</p>
+                      <p className="small">{song.track.album.name}</p>
+                    </div>
+                  </div>
                 );
               })}
-            </tbody>
-          </table>
+            </div>
+          ) : (
+            <div className="loader" />
+          )}
         </Module>
       </div>
     </main>
