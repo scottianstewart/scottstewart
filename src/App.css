@@ -258,7 +258,7 @@ html {
   height: 24px;
   border: 2px solid var(--font-color);
   position: relative;
-  transition: box-shadow 500ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
 }
 
 .theme-button:hover {
