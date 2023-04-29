@@ -86,8 +86,8 @@ function App() {
         </div>
       </div>
       <div className="content">
-        <ResumeModule />
         <StatsModule />
+        <ResumeModule />
         <Module
           className="module--full-width"
           title="Songs I Like (Thanks Spotify API)"
