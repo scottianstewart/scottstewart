@@ -75,23 +75,13 @@ function App() {
   return (
     <main className="main" data-theme={theme}>
       <div className="nav">
-        <h1>Dashboard</h1>
+        <ThemeButton
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          active={theme === "light"}
+        >
+          <div className="light-switch" />
+        </ThemeButton>
         <div className="account-row">
-          <div>
-            <ThemeButton
-              onClick={() => setTheme("light")}
-              active={theme === "light"}
-            >
-              day
-            </ThemeButton>{" "}
-            /
-            <ThemeButton
-              onClick={() => setTheme("dark")}
-              active={theme === "dark"}
-            >
-              night
-            </ThemeButton>
-          </div>
           <AccountInfo />
         </div>
       </div>
@@ -100,7 +90,7 @@ function App() {
         <StatsModule />
         <Module
           className="module--full-width"
-          title="Songs I Like (Thanks Spotify)"
+          title="Songs I Like (Thanks Spotify API)"
         >
           {songsILike ? (
             <div className="tracklist">

@@ -40,22 +40,23 @@ const StatsModule = () => {
           <p>Male</p>
         </div>
         <div className="stats-module__list-item">
-          <p className="label">Pronouns</p>
-          <p>He/him</p>
+          <p className="label">Time alive</p>
+          <p>{secondsToDhms(seconds)}</p>
         </div>
+
         <div className="stats-module__list-item">
           <p className="label">Height</p>
           <p>5' 10"</p>
         </div>
         <div className="stats-module__list-item">
-          <p className="label">Time alive</p>
-          <p className="label">{secondsToDhms(seconds)}</p>
+          <p className="label">Pronouns</p>
+          <p>He/him</p>
         </div>
         <div className="stats-module__list-item">
           <p className="label">Ancestry</p>
-          <p className="label">
-            England & NW Europe: 67%, Scotland: 15%, Norway: 8%, Wales: 6%,
-            Ireland: 3%, Indigenous Americas: 1%
+          <p>
+            Europe: 67%, Scotland: 15%, Norway: 8%, Wales: 6%, Ireland: 3%,
+            Indigenous Americas: 1%
           </p>
         </div>
       </div>
