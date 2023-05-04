@@ -14,7 +14,7 @@ const spotifyApi = new SpotifyWebApi();
 
 function App() {
   const [accessToken, setAccessToken] = useState();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [songsILike, setSongsILike] = useState();
 
   const getAuth = async () => {
