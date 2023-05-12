@@ -29,7 +29,7 @@ const StatsModule = () => {
   }
 
   return (
-    <Module title="All about me">
+    <Module title="Biometrics">
       <div className="stats-module">
         <div className="stats-module__list-item">
           <p className="label">Name</p>

@@ -3,17 +3,17 @@
 
 
 :root {
-  --bg-color: #081B02;
-  --font-color: #CED1CC;
-  --font-color-light: #838D80;
-  --border-color: #21321B;
+  --bg-color: #110814;
+  --font-color: #bfc88d;
+  --font-color-light: #bfc88d;
+  --border-color: #bfc88d;
 }
 
 [data-theme="light"] {
-  --bg-color: #CED1CC;
-  --font-color: #081B02;
-  --font-color-light: #4b5249;
-  --border-color: #21321B;
+  --bg-color: #bfc88d;
+  --font-color: #110814;
+  --font-color-light: #110814;
+  --border-color: #110814;
 }
 
 
@@ -39,18 +39,6 @@ html {
   box-sizing: border-box;
   min-height: 100vh;
   padding-bottom: 24px;
-}
-
-.main:before {
-  content: '';
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(100, 400, 100, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  filter: blur(246px);
 }
 
 .nav {
@@ -125,7 +113,7 @@ html {
 
 .module__title {
   border-bottom: 2px solid var(--border-color);
-  font-size: 18px;
+  font-size: 22px;
   padding: 24px;
   font-weight: bold;
 }
