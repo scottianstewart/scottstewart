@@ -1,4 +1,5 @@
 import './App.css'
+import faceImg from './assets/me.jpeg'
 
 function App() {
   return (
@@ -6,6 +7,9 @@ function App() {
       <div className="content-wrapper">
         <header className="header">
           <h1 className="header-title">Hello, I'm Scott</h1>
+          <div className="header-image-wrapper">
+            <img src={faceImg} alt="me" className="face-img" />
+          </div>
         </header>
 
         <main className="main-content">
